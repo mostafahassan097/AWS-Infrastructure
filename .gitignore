@@ -1,2 +1,3 @@
 .terraform/*
 public-key_pair.pem
+private.pem

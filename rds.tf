@@ -21,7 +21,7 @@ username = var.rds-username
 password = var.rds-password
 parameter_group_name = var.rds-grp-name
 availability_zone= var.az-1
-db_subnet_group_name= aws_db_subnet_gro/*  */up.mydb-sub-grp.name
+db_subnet_group_name= aws_db_subnet_group.mydb-sub-grp.name
 vpc_security_group_ids= [aws_security_group.securitygroup-1.id,aws_security_group.securitygroup-2.id]
 port=var.rds-port
 }
