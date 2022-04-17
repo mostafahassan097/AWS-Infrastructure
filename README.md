@@ -22,7 +22,6 @@ Simple Terraform Project To Apply Infrastructure as a Code On AWS.
 ![App Screenshot](https://github.com/mostafahassan097/Terraform-Project/blob/main/screenshots/2.png)
 ![App Screenshot](https://github.com/mostafahassan097/Terraform-Project/blob/main/screenshots/3.png)
 ![App Screenshot](https://github.com/mostafahassan097/Terraform-Project/blob/main/screenshots/4.png)
-![App Screenshot](https://github.com/mostafahassan097/Terraform-Project/blob/main/screenshots/1.png)
 ![App Screenshot](https://github.com/mostafahassan097/Terraform-Project/blob/main/screenshots/5.png)
 ![App Screenshot](https://github.com/mostafahassan097/Terraform-Project/blob/main/screenshots/6.png)
 ![App Screenshot](https://github.com/mostafahassan097/Terraform-Project/blob/main/screenshots/7.png)
