@@ -1,0 +1,73 @@
+- hosts: server-a
+  remote_user: ubuntu
+  become: yes
+  tasks:
+    - name: update apt
+      apt:
+        update_cache: yes
+    
+    
+    - name: create dir
+      file: 
+        name: jenkins_home
+        state: directory
+        mode: 0777
+    
+    
+    - name: install openjdk
+      apt: 
+        name: openjdk-8-jdk 
+        state: present
+    
+
+    - name: Install aptitude
+      apt:
+          name: aptitude
+          state: latest
+          update_cache: true
+
+    - name: Install required system packages
+      apt:
+          pkg:
+            - apt-transport-https
+            - ca-certificates
+            - curl
+            - software-properties-common
+            - python3-pip
+            - virtualenv
+            - python3-setuptools
+          state: latest
+          update_cache: true
+
+    - name: Add Docker GPG apt Key
+      apt_key:
+          url: https://download.docker.com/linux/ubuntu/gpg
+          state: present
+
+    - name: Add Docker Repository
+      apt_repository:
+          repo: deb https://download.docker.com/linux/ubuntu focal stable
+          state: present
+
+    - name: Update apt and install docker-ce
+      apt:
+          name: docker-ce
+          state: latest
+          update_cache: true
+    - name: Change file ownership, group and permissions
+      ansible.builtin.file:
+        path: /var/run/docker.sock
+        mode: '0666'
+    - name: copying the agent jar to the slave 
+      copy:
+        src:  agent.jar
+        dest: /home/ubuntu/bin/agent.jar
+    - name: Creating bin directory 
+      file: 
+        path: /home/ubuntu/bin
+        state: directory
+        mode: 0777
+    - name: install git 
+      yum:
+        name: git
+        state: latest
