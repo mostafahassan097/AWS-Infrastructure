@@ -16,6 +16,12 @@ resource "aws_security_group" "securitygroup-2"{
   }
   ingress {
     cidr_blocks = [module.network.vpc_cidr]
+    from_port = 80
+    to_port = 80
+    protocol = "tcp"
+  }
+  ingress {
+    cidr_blocks = [module.network.vpc_cidr]
     from_port = 3306
     to_port = 3306
     protocol = "tcp"

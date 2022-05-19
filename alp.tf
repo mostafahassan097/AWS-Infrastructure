@@ -18,9 +18,6 @@ resource "aws_lb_target_group_attachment" "external-elb1" {
   target_id        = aws_instance.ApplicatoinInstance.id
   port             = 80
 
-  depends_on = [
-    aws_instance.ApplicatoinInstance,
-  ]
 }
 
 
