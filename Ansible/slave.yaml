@@ -58,16 +58,18 @@
       ansible.builtin.file:
         path: /var/run/docker.sock
         mode: '0666'
-    - name: copying the agent jar to the slave 
-      copy:
-        src:  agent.jar
-        dest: /home/ubuntu/bin/agent.jar
     - name: Creating bin directory 
       file: 
         path: /home/ubuntu/bin
         state: directory
         mode: 0777
+
+    - name: copying the agent jar to the slave 
+      copy:
+        src:  agent.jar
+        dest: /home/ubuntu/bin/agent.jar
+   
     - name: install git 
-      yum:
+      apt:
         name: git
         state: latest
