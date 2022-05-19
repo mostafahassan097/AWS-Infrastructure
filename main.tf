@@ -8,5 +8,4 @@ module "network" {
     project-private_subnet_2_cidr=  var.private_subnet_2_cidr
     project-az-1 = var.az-1
     project-az-2 = var.az-2
-    
 }

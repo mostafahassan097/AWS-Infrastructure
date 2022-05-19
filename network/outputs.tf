@@ -20,5 +20,4 @@ output "pri_sub_1" {
 output "pri_sub_2" {
   value = aws_subnet.private-2.id
 }
- 
- 
+
