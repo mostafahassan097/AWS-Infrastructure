@@ -23,7 +23,6 @@ pipeline {
              withAWS(credentials: 'aws-creds', region: 'eu-west-1') {
              
                 sh 'terraform init'
-                // sh 'terraform workspace new dev'
                 }
           }
         }
@@ -66,6 +65,8 @@ Host bastion
     UserKnownHostsFile /dev/null
     IdentityFile ~/.ssh/myKey.pem
 " > ~/.ssh/config
+
+echo ""
                 """
                 }
                
@@ -75,7 +76,6 @@ Host bastion
           stage ("Configure Private Instance With Ansible"){
             steps{
                   sh """
-                  sleep 50
                   ansible-playbook -i Ansible/inventory.ini Ansible/slave.yaml
                   """
             }
