@@ -1,4 +1,4 @@
-- hosts: server-a
+- hosts: private
   remote_user: ubuntu
   become: yes
   tasks:
