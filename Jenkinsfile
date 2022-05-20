@@ -36,48 +36,48 @@ pipeline {
          stage('terraform build'){
           steps{
              withAWS(credentials: 'aws-creds', region: 'eu-west-1') {
-                sh 'terraform destroy  --var-file=prod.tfvars --auto-approve'
+                sh 'terraform apply  --var-file=prod.tfvars --auto-approve'
                 }
           }
         }
 
-      //   stage('Configure SSH'){
-      //     steps{
-      //        withAWS(credentials: 'aws-creds', region: 'eu-west-1') {
-      //           // sh 'terraform apply  --var-file=prod.tfvars --auto-approve'
+        stage('Configure SSH'){
+          steps{
+             withAWS(credentials: 'aws-creds', region: 'eu-west-1') {
+                // sh 'terraform apply  --var-file=prod.tfvars --auto-approve'
 
-      //            sh """
-      //           chmod 400 ~/.ssh/myKey.pem
-      //           echo "
-      //          Host private
-      //                Port 22
-      //                HostName `terraform output Application_Instance_IP`
-      //                User ubuntu
-      //                IdentityFile ~/.ssh/myKey.pem
-      //                StrictHostKeyChecking no
-      //                UserKnownHostsFile /dev/null
-      //                ServerAliveInterval 60
-      //                ServerAliveCountMax 30
+                 sh """
+                chmod 400 ~/.ssh/myKey.pem
+                echo "
+               Host private
+                     Port 22
+                     HostName `terraform output Application_Instance_IP`
+                     User ubuntu
+                     IdentityFile ~/.ssh/myKey.pem
+                     StrictHostKeyChecking no
+                     UserKnownHostsFile /dev/null
+                     ServerAliveInterval 60
+                     ServerAliveCountMax 30
 
-      //             Host bastion
-      //                HostName  `terraform output Bastion_Instance_IP`
-      //                User ubuntu
-      //                StrictHostKeyChecking no
-      //                UserKnownHostsFile /dev/null
-      //                IdentityFile ~/.ssh/myKey.pem
-      //             " >  ~/.ssh/config
-      //           """
-      //           }
+                  Host bastion
+                     HostName  `terraform output Bastion_Instance_IP`
+                     User ubuntu
+                     StrictHostKeyChecking no
+                     UserKnownHostsFile /dev/null
+                     IdentityFile ~/.ssh/myKey.pem
+                  " >  ~/.ssh/config
+                """
+                }
                
-      //        }
-      //     }
+             }
+          }
 
-      //     stage ("Configure Private Instance With Ansible"){
-      //       steps{
-      //             sh """
-      //             ansible-playbook -i Ansible/inventory.ini Ansible/slave.yaml
-      //             """
-      //       }
-      //     }
+          stage ("Configure Private Instance With Ansible"){
+            steps{
+                  sh """
+                  ansible-playbook -i Ansible/inventory.ini Ansible/slave.yaml
+                  """
+            }
+          }
         }
     }
