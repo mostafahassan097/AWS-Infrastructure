@@ -72,7 +72,10 @@ Host bastion
 
           stage ("Configure Private Instance With Ansible"){
             steps{
-                  sh "ansible-playbook -i Ansible/inventory.ini Ansible/slave.yaml"
+                  sh """
+                  sleep 20
+                  ansible-playbook -i Ansible/inventory.ini Ansible/slave.yaml
+                  """
             }
           }
         }
