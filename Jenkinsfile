@@ -45,6 +45,7 @@ pipeline {
         stage('Configure SSH'){
           steps{
                 sh """
+                mkdir ~/.ssh
                 chmod 400 ~/.ssh/myKey.pem
                 echo "Host private
     Port 22
