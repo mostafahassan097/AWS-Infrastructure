@@ -3,11 +3,11 @@ output "lb_dns_name" {
   value       = aws_lb.external-elb.dns_name
 }
 
-output "Private Instance Ip" {
+output "Private_Instance_Ip" {
   value = aws_instance.ApplicatoinInstance.private_ip
 }
 
-output "Public Instance Ip" {
+output "Public_Instance_Ip" {
   value = aws_instance.BastionInstance.public_ip
 }
 
