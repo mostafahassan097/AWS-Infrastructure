@@ -50,7 +50,7 @@ pipeline {
                 chmod 400 ~/.ssh/myKey.pem
                 echo "Host private
     Port 22
-    HostName `terraform output ApplicatoinInstance`
+    HostName `terraform output Application_Instance_IP`
     User ubuntu
     IdentityFile ~/.ssh/myKey.pem
     StrictHostKeyChecking no
@@ -59,7 +59,7 @@ pipeline {
     ServerAliveCountMax 30
 
 Host bastion
-    HostName  `terraform output BastionInstance`
+    HostName  `terraform output Bastion_Instance_IP`
     User ubuntu
     StrictHostKeyChecking no
     UserKnownHostsFile /dev/null
