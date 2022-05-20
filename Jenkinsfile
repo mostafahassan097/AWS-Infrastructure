@@ -5,7 +5,7 @@
 3- terraform tool
 */ 
 pipeline {
- agent { label '!master' }
+  agent {label '!private_slave'}
     tools {
        terraform 'terraform-ver'
     }
