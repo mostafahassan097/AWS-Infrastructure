@@ -44,7 +44,10 @@ pipeline {
 
         stage('Configure SSH'){
           steps{
-                sh """
+             withAWS(credentials: 'aws-creds', region: 'eu-west-1') {
+                // sh 'terraform apply  --var-file=prod.tfvars --auto-approve'
+
+                 sh """
                 chmod 400 ~/.ssh/myKey.pem
                 echo "Host private
     Port 22
@@ -62,6 +65,8 @@ Host bastion
     IdentityFile ~/.ssh/myKey.pem
 " > ~/.ssh/config
                 """
+                }
+               
              }
           }
         }
