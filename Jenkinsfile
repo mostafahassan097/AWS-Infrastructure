@@ -5,7 +5,7 @@
 3- terraform tool
 */ 
 pipeline {
-  agent {label "master"}
+ agent { label '!master' }
     tools {
        terraform 'terraform-ver'
     }
