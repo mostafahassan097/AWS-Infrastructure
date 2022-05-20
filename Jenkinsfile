@@ -5,7 +5,7 @@
 3- terraform tool
 */ 
 pipeline {
-  agent any
+  agent {label "Jenkins"}
     tools {
        terraform 'terraform-ver'
     }
