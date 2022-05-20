@@ -62,6 +62,8 @@ pipeline {
 Host bastion
     HostName  `terraform output BastionInstance`
     User ubuntu
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
     IdentityFile ~/.ssh/myKey.pem
 " > ~/.ssh/config
                 """
