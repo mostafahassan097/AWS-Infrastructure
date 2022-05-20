@@ -66,5 +66,3 @@ Host bastion
           }
         }
     }
-     
-  }
