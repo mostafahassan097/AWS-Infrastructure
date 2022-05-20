@@ -1,6 +1,7 @@
 - hosts: private
   remote_user: ubuntu
   become: yes
+  gather_facts: no
   tasks:
     - name: update apt
       apt:
