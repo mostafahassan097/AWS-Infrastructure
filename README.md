@@ -19,7 +19,7 @@ Simple Terraform Project To Apply Infrastructure as a Code On AWS.
 ## Screenshots
 
 ![App Screenshot](https://github.com/mostafahassan097/Terraform-Project/blob/main/screenshots/1.png)
-![App Screenshot](https://github.com/mostafahassan097/Terraform-Project/blob/main/screenshots/2.png)
+![App Screenshot](https://github.com/mostafahassan097/Terraform-Project/blob/main/screenshots/2-.png)
 ![App Screenshot](https://github.com/mostafahassan097/Terraform-Project/blob/main/screenshots/3.png)
 ![App Screenshot](https://github.com/mostafahassan097/Terraform-Project/blob/main/screenshots/4.png)
 ![App Screenshot](https://github.com/mostafahassan097/Terraform-Project/blob/main/screenshots/5.png)
@@ -28,11 +28,3 @@ Simple Terraform Project To Apply Infrastructure as a Code On AWS.
 ![App Screenshot](https://github.com/mostafahassan097/Terraform-Project/blob/main/screenshots/8.png)
 ![App Screenshot](https://github.com/mostafahassan097/Terraform-Project/blob/main/screenshots/9.png)
 ![App Screenshot](https://github.com/mostafahassan097/Terraform-Project/blob/main/screenshots/10.png)
-![App Screenshot](https://github.com/mostafahassan097/Terraform-Project/blob/main/screenshots/11.png)
-![App Screenshot](https://github.com/mostafahassan097/Terraform-Project/blob/main/screenshots/12.png)
-![App Screenshot](https://github.com/mostafahassan097/Terraform-Project/blob/main/screenshots/13.png)
-![App Screenshot](https://github.com/mostafahassan097/Terraform-Project/blob/main/screenshots/14.png)
-![App Screenshot](https://github.com/mostafahassan097/Terraform-Project/blob/main/screenshots/15.png)
-![App Screenshot](https://github.com/mostafahassan097/Terraform-Project/blob/main/screenshots/16.png)
-![App Screenshot](https://github.com/mostafahassan097/Terraform-Project/blob/main/screenshots/17.png)
-
