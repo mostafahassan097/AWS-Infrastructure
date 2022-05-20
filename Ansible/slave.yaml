@@ -54,11 +54,17 @@
           name: docker-ce
           state: latest
           update_cache: true
+
+    - name: install ansible
+      apt: 
+        name: ansible
+        state: present
+
     - name: Change file ownership, group and permissions
       ansible.builtin.file:
         path: /var/run/docker.sock
         mode: '0666'
-    - name: Creating bin directory 
+    - name:  bin directory 
       file: 
         path: /home/ubuntu/bin
         state: directory

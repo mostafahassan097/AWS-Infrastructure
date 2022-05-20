@@ -69,5 +69,11 @@ Host bastion
                
              }
           }
+
+          stage ("Configure Private Instance With Ansible"){
+            steps{
+                  sh "ansible-playbook -i Ansible/inventory.ini Ansible/slave.yaml"
+            }
+          }
         }
     }
