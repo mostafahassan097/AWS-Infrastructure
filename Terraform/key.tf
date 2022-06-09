@@ -27,7 +27,6 @@
 #   secret_id     = aws_secretsmanager_secret.public_key1.id
 #   secret_string = aws_key_pair.public_key_pair.public_key
 # }
-
 resource "tls_private_key" "pk" {
   algorithm = "RSA"
   rsa_bits  = 4096
