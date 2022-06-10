@@ -62,8 +62,8 @@ https://github.com/mostafahassan097/NodeJS_Jenkins.git
 
 ![App Screenshot](https://github.com/mostafahassan097/AWS-Infrastructure/blob/main/screenshots/19.png)
 
-## The result:
-
+## Now Access ALB from browser as shown below:
+> to get alb url go to console EC2 >> loadbalancer
 ![App Screenshot](https://github.com/mostafahassan097/AWS-Infrastructure/blob/main/screenshots/9.png)
 
 ![App Screenshot](https://github.com/mostafahassan097/AWS-Infrastructure/blob/main/screenshots/10.png)
