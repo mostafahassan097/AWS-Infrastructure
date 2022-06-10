@@ -20,8 +20,12 @@ output "RDS_PORT" {
 }
 
 output "REDIS_HOSTNAME" {
-   value = aws_elasticache_cluster.myelasticache.cluster_address
+   value = aws_elasticache_cluster.myelasticache.cache_nodes[0].endpoint.address
+
+#    output "hostname" {
+#   value = "${aws_elasticache_cluster.redis.cache_nodes.0.address}"
 }
+
 
 output "REDIS_PORT" {
    value = aws_elasticache_cluster.myelasticache.port
