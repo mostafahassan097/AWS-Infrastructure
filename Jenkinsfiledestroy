@@ -11,52 +11,13 @@ pipeline {
     }
   
     stages {
-        // stage('terraform init'){
-        //   steps{
-        //      withAWS(credentials: 'aws-creds', region: 'eu-west-1') {
-             
-        //         sh 'terraform -chdir="./Terraform" init'
-        //         }
-        //   }
-        // }
-        // stage('terraform plan'){
-        //   steps{
-        //      withAWS(credentials: 'aws-creds', region: 'eu-west-1') {
-        //         sh 'terraform -chdir="./Terraform" plan --var-file=prod.tfvars'
-        //         }
-        //   }
-        // }
-         stage('terraform build'){
+
+         stage('terraform  destroy'){
           steps{
              withAWS(credentials: 'aws-creds', region: 'eu-west-1') {
                 sh 'terraform   -chdir="./Terraform" destroy  --var-file=prod.tfvars --auto-approve'
                 }
           }
         }
-
-        // stage('Configure SSH and Generate Environment Vars File'){
-        //   steps{
-        //      withAWS(credentials: 'aws-creds', region: 'eu-west-1') {
-
-        //          sh """
-               
-        //         chmod 400 ~/.ssh/myKey.pem
-        //         chmod +x Extra/config-ssh.sh
-        //         chmod +x Extra/gen-env-vars.sh 
-        //           ./Extra/config-ssh.sh
-        //           ./Extra/gen-env-vars.sh
-        //         """
-        //         }
-               
-        //      }
-        //   }
-
-        //   stage ("Configure Private Instance With Ansible"){
-        //     steps{
-        //           sh """
-        //           ansible-playbook -i Ansible/inventory.ini Ansible/slave.yaml
-        //           """
-        //     }
-        //   }
-        }
     }
+}
