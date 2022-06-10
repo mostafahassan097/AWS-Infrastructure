@@ -41,9 +41,10 @@ pipeline {
                  sh """
                
                 chmod 400 ~/.ssh/myKey.pem
-                chmod +x Extra/ssh-config.sh
-                chmod 
+                chmod +x Extra/config-ssh.sh
+                chmod +x Extra/gen-env-vars.sh 
                   ./Extra/ssh-config.sh
+                  ./Extra/gen-env-vars.sh
                 """
                 }
                

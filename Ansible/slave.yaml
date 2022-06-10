@@ -80,3 +80,8 @@
       apt:
         name: git
         state: latest
+
+    - name: copying the Env file to the slave 
+      copy:
+        src:  .env
+        dest: /home/ubuntu/.env

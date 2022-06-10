@@ -12,7 +12,7 @@ output "Bastion_Instance_IP" {
 }
 
 output "RDS_HOSTNAME" {
-   value = aws_db_instance.my_rds.endpoint
+   value = aws_db_instance.my_rds.address
 }
 
 output "RDS_PORT" {
