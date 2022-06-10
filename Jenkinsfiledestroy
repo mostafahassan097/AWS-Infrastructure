@@ -9,7 +9,10 @@ pipeline {
     tools {
        terraform 'terraform'
     }
-   stage('terraform init'){
+  
+    stages {
+
+       stage('terraform init'){
           steps{
              withAWS(credentials: 'aws-creds', region: 'eu-west-1') {
              
@@ -17,8 +20,7 @@ pipeline {
                 }
           }
         }
-    stages {
-
+        
          stage('terraform  destroy'){
           steps{
              withAWS(credentials: 'aws-creds', region: 'eu-west-1') {
