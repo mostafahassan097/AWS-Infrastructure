@@ -34,44 +34,39 @@ Install Plugins:
 ## Creating the Infrastructures:
 * Create a new Item of type pipeline: using the repo link
 ```sh
-https://github.com/moutazmuhammad/AWS-Terraform-Task.git
+https://github.com/mostafahassan097/AWS-Infrastructure.git
 ```
-![Build Status](https://github.com/moutazmuhammad/AWS-Terraform-Task/blob/main/img/5.png?raw=true)
+![App Screenshot](https://github.com/mostafahassan097/AWS-Infrastructure/blob/main/screenshots/14.png)
 * Build the Pipeline
-![Build Status](https://github.com/moutazmuhammad/AWS-Terraform-Task/blob/main/img/6.png?raw=true)
+![App Screenshot](https://github.com/mostafahassan097/AWS-Infrastructure/blob/main/screenshots/15.png)
 
-## ADD the private EC2 as a slave for Jenkins:
+![App Screenshot](https://github.com/mostafahassan097/AWS-Infrastructure/blob/main/screenshots/16.png)
+## Configure Private Instance as a Slave in Jenkins:
 * Choose Launch agent via execution of a command on the master. In Lasunch command, Write the following command:
 ```sh
-ssh -T -o ProxyCommand="ssh -W %h:%p -q bastion" -t  -i ~/.ssh/privatekey.pem ubuntu@private_ip_of_instance exec  java -jar ~/bin/agent.jar
+ssh -T -o ProxyCommand="ssh -W %h:%p -q bastion" -t  -i ~/.ssh/myKey.pem ubuntu@private exec  java -jar ~/bin/agent.jar
 ```
-![Build Status](https://github.com/moutazmuhammad/AWS-Terraform-Task/blob/main/img/7.png?raw=true)
+![App Screenshot](https://github.com/mostafahassan097/AWS-Infrastructure/blob/main/screenshots/16.png)
 
 * Save and Launch the agent.
-![Build Status](https://github.com/moutazmuhammad/AWS-Terraform-Task/blob/main/img/8.png?raw=true)
-![Build Status](https://github.com/moutazmuhammad/AWS-Terraform-Task/blob/main/img/9.png?raw=true)
+![App Screenshot](https://github.com/mostafahassan097/AWS-Infrastructure/blob/main/screenshots/1.png)
 
-> Note: In order to get past Jenkins security feature, you will need to approve your script. Go to Manage Jenkins -> In-process Script Approval. In that screen, you will see the script that you are trying to execute. There should be an approve button that you'll need to click to approve that script.
-![Build Status](https://github.com/moutazmuhammad/AWS-Terraform-Task/blob/main/img/10.png?raw=true)
+![App Screenshot](https://github.com/mostafahassan097/AWS-Infrastructure/blob/main/screenshots/18.png)
 
 
-## For Nodejs App:
+## Create Deployment Pipeline:
 * Create a new Item of type pipeline: using the repo link
 ```sh
-https://github.com/moutazmuhammad/NodeJs_CI-CD.git
+https://github.com/mostafahassan097/NodeJS_Jenkins.git
 ```
 
-> Note: Add the RDS endpoint and the elasticache redis endpoint in the Jenkinsfile and push it to the repo. In Jenkins add the RDS credentials and name RDS_CRED
-
-![Build Status](https://github.com/moutazmuhammad/AWS-Terraform-Task/blob/main/img/11.png?raw=true)
-* Build the Pipeline
-![Build Status](https://github.com/moutazmuhammad/AWS-Terraform-Task/blob/main/img/12.png?raw=true)
+![App Screenshot](https://github.com/mostafahassan097/AWS-Infrastructure/blob/main/screenshots/18.png)
 
 ## The result:
-![Build Status](https://github.com/moutazmuhammad/AWS-Terraform-Task/blob/main/img/13.png?raw=true)
-![Build Status](https://github.com/moutazmuhammad/AWS-Terraform-Task/blob/main/img/14.png?raw=true)
-![Build Status](https://github.com/moutazmuhammad/AWS-Terraform-Task/blob/main/img/15.png?raw=true)
 
+![App Screenshot](https://github.com/mostafahassan097/AWS-Infrastructure/blob/main/screenshots/9.png)
+
+![App Screenshot](https://github.com/mostafahassan097/AWS-Infrastructure/blob/main/screenshots/10.png)
 
 
 
