@@ -60,7 +60,7 @@ ssh -T -o ProxyCommand="ssh -W %h:%p -q bastion" -t  -i ~/.ssh/myKey.pem ubuntu@
 https://github.com/mostafahassan097/NodeJS_Jenkins.git
 ```
 
-![App Screenshot](https://github.com/mostafahassan097/AWS-Infrastructure/blob/main/screenshots/18.png)
+![App Screenshot](https://github.com/mostafahassan097/AWS-Infrastructure/blob/main/screenshots/19.png)
 
 ## The result:
 
