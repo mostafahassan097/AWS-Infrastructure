@@ -34,7 +34,7 @@ pipeline {
           }
         }
 
-        stage('Configure SSH'){
+        stage('Configure SSH and Generate Environment Vars File'){
           steps{
              withAWS(credentials: 'aws-creds', region: 'eu-west-1') {
 
@@ -43,7 +43,7 @@ pipeline {
                 chmod 400 ~/.ssh/myKey.pem
                 chmod +x Extra/config-ssh.sh
                 chmod +x Extra/gen-env-vars.sh 
-                  ./Extra/ssh-config.sh
+                  ./Extra/config-ssh.sh
                   ./Extra/gen-env-vars.sh
                 """
                 }
