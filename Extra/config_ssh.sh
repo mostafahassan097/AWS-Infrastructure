@@ -1,5 +1,4 @@
-#!/bin/bash
-mkdir .ssh
+#!/bin/bash 
  echo "
                Host private
                      Port 22

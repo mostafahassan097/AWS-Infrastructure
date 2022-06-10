@@ -39,6 +39,7 @@ pipeline {
              withAWS(credentials: 'aws-creds', region: 'eu-west-1') {
 
                  sh """
+               
                 chmod 400 ~/.ssh/myKey.pem
                 chmod +x Extra/ssh-config.sh
                 chmod 
