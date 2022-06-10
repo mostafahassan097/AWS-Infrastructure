@@ -7,7 +7,7 @@
 pipeline {
   agent {label '!private_slave'}
     tools {
-       terraform 'terraform-ver'
+       terraform 'terraform'
     }
   
     stages {
@@ -41,6 +41,7 @@ pipeline {
                  sh """
                 chmod 400 ~/.ssh/myKey.pem
                 chmod +x Extra/ssh-config.sh
+                chmod 
                   ./Extra/ssh-config.sh
                 """
                 }
