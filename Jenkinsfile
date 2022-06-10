@@ -11,32 +11,25 @@ pipeline {
     }
   
     stages {
-        stage('terraform format') {
-            steps{
-                withAWS(credentials: 'aws-creds', region: 'eu-west-1') {
-                sh 'terraform fmt'
-                }
-            }
-        }
         stage('terraform init'){
           steps{
              withAWS(credentials: 'aws-creds', region: 'eu-west-1') {
              
-                sh 'terraform init'
+                sh 'terraform -chdir="./Terraform" init'
                 }
           }
         }
         stage('terraform plan'){
           steps{
              withAWS(credentials: 'aws-creds', region: 'eu-west-1') {
-                sh 'terraform plan --var-file=prod.tfvars'
+                sh 'terraform -chdir="./Terraform" plan --var-file=prod.tfvars'
                 }
           }
         }
          stage('terraform build'){
           steps{
              withAWS(credentials: 'aws-creds', region: 'eu-west-1') {
-                sh 'terraform apply  --var-file=prod.tfvars --auto-approve'
+                sh 'terraform   -chdir="./Terraform" apply  --var-file=prod.tfvars --auto-approve'
                 }
           }
         }
@@ -44,28 +37,11 @@ pipeline {
         stage('Configure SSH'){
           steps{
              withAWS(credentials: 'aws-creds', region: 'eu-west-1') {
-                // sh 'terraform apply  --var-file=prod.tfvars --auto-approve'
 
                  sh """
                 chmod 400 ~/.ssh/myKey.pem
-                echo "
-               Host private
-                     Port 22
-                     HostName `terraform output Application_Instance_IP`
-                     User ubuntu
-                     IdentityFile ~/.ssh/myKey.pem
-                     StrictHostKeyChecking no
-                     UserKnownHostsFile /dev/null
-                     ServerAliveInterval 60
-                     ServerAliveCountMax 30
-
-                  Host bastion
-                     HostName  `terraform output Bastion_Instance_IP`
-                     User ubuntu
-                     StrictHostKeyChecking no
-                     UserKnownHostsFile /dev/null
-                     IdentityFile ~/.ssh/myKey.pem
-                  " >  ~/.ssh/config
+                chmod +x Extra/ssh-config.sh
+                  ./Extra/ssh-config.sh
                 """
                 }
                

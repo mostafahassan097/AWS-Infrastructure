@@ -28,3 +28,5 @@ Simple Terraform Project To Apply Infrastructure as a Code On AWS.
 ![App Screenshot](https://github.com/mostafahassan097/Terraform-Project/blob/main/screenshots/8.png)
 ![App Screenshot](https://github.com/mostafahassan097/Terraform-Project/blob/main/screenshots/9.png)
 ![App Screenshot](https://github.com/mostafahassan097/Terraform-Project/blob/main/screenshots/10.png)
+
+docker run -d -v /var/run/docker.sock:/var/run/docker.sock -v jenkinsvol1:/var/jenkins_home -p 8082:8080 jenkins_master
