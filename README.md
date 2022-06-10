@@ -21,11 +21,11 @@ Install Plugins:
 - pipeline AWS Steps
 - Ansible
 - Terraform
-![App Screenshot](https://github.com/mostafahassan097/Terraform-Project/blob/main/screenshots/11.png)
+![App Screenshot](https://github.com/mostafahassan097/AWS-Infrastructure/blob/main/screenshots/11.png)
 * Configure Terraform Dashboard >> Global Tool Configuration
-![App Screenshot](https://github.com/mostafahassan097/Terraform-Project/blob/main/screenshots/12.png)
+![App Screenshot](https://github.com/mostafahassan097/AWS-Infrastructure/blob/main/screenshots/12.png)
 * Add: Global credentials:
-![App Screenshot](https://github.com/mostafahassan097/Terraform-Project/blob/main/screenshots/13.png)
+![App Screenshot](https://github.com/mostafahassan097/AWS-Infrastructure/blob/main/screenshots/13.png)
 
 > Note: Create bucket  from aws consol to save your terraform state 
 > Note: Create Dynamodb table named "backend". The table must have a partition key named LockID with type of String 
