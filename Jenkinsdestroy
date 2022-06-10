@@ -3,13 +3,15 @@
 2- cloudBees AWS credentials to save the credentials in jenkins
 3- terraform tool
 */ 
-pipeline {
+ pipeline {
   agent {label '!private_slave'}
     tools {
        terraform 'terraform'
     }
   
-         stage('terraform destroy'){
+    stages {
+         stage('terraform destroy')
+         {
            steps{
               withAWS(credentials: 'aws-creds', region: 'eu-west-1') {
                  sh 'terraform -chdir="./Terraform" destroy --var-file=prod.tfvars'
@@ -17,4 +19,5 @@ pipeline {
            }
         }
 
- }
+        
+}
