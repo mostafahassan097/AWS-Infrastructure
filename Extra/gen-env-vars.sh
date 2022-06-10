@@ -1,4 +1,5 @@
 #!/bin/bash
+cd ./Terraform
 echo "
 HOST=`terraform output RDS_HOSTNAME`
 PORT=`terraform output RDS_PORT`

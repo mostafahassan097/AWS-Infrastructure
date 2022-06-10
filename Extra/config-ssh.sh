@@ -1,4 +1,5 @@
 #!/bin/bash 
+cd ./Terraform
  echo "
                Host private
                      Port 22
