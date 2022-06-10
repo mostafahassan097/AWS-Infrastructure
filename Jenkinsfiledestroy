@@ -9,7 +9,14 @@ pipeline {
     tools {
        terraform 'terraform'
     }
-  
+   stage('terraform init'){
+          steps{
+             withAWS(credentials: 'aws-creds', region: 'eu-west-1') {
+             
+                sh 'terraform -chdir="./Terraform" init'
+                }
+          }
+        }
     stages {
 
          stage('terraform  destroy'){
