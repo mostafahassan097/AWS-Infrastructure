@@ -1,4 +1,4 @@
-# Jenkins Pipeline To Provision Infrasturcture On AWS Using Terraform Ansible Docker 
+# Jenkins Pipeline To Provision Infrasturcture On AWS Using Terraform, Ansible And Docker 
 
 ## Preparing Jenkins master:
 * Clone The repo:
@@ -31,7 +31,7 @@ Install Plugins:
 > Note: Create Dynamodb table named "backend". The table must have a partition key named LockID with type of String 
 
 
-## Creating the Infrastructures:
+## Creating the Infrastructure:
 * Create a new Item of type pipeline: using the repo link
 ```sh
 https://github.com/mostafahassan097/AWS-Infrastructure.git
